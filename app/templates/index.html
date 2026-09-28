@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduGenie - Google Gemini Powered Learning Assistant"
+    >
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="hero">
+
+            <div class="logo-circle">
+                🧠
+            </div>
+
+            <h1>
+                Welcome to EduGenie
+                <span>✨</span>
+            </h1>
+
+            <p>
+                Your personal AI learning assistant
+            </p>
+
+            <div class="hero-badge">
+                Powered by Google Gemini
+            </div>
+
+        </header>
+
+
+        <!-- Q&A -->
+        <section class="card">
+
+            <div class="card-header">
+
+                <div class="icon blue">
+                    💬
+                </div>
+
+                <div>
+                    <h2>
+                        Ask EduGenie a Question
+                    </h2>
+
+                    <p>
+                        Get a clear and student-friendly answer.
+                    </p>
+                </div>
+
+            </div>
+
+            <form
+                id="qaForm"
+                class="form"
+            >
+
+                <input
+                    type="text"
+                    id="question"
+                    placeholder="Example: Why is the sky blue?"
+                    maxlength="20000"
+                    required
+                >
+
+                <button type="submit">
+                    Get Answer
+                </button>
+
+            </form>
+
+            <div
+                id="qaResult"
+                class="output"
+            ></div>
+
+        </section>
+
+
+        <!-- Explanation -->
+        <section class="card">
+
+            <div class="card-header">
+
+                <div class="icon purple">
+                    💡
+                </div>
+
+                <div>
+                    <h2>
+                        Need an Explanation?
+                    </h2>
+
+                    <p>
+                        Learn difficult concepts in simple language.
+                    </p>
+                </div>
+
+            </div>
+
+            <form
+                id="explainForm"
+                class="form"
+            >
+
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="Example: Photosynthesis"
+                    maxlength="20000"
+                    required
+                >
+
+                <button type="submit">
+                    Explain
+                </button>
+
+            </form>
+
+            <div
+                id="explanationResult"
+                class="output"
+            ></div>
+
+        </section>
+
+
+        <!-- Summary -->
+        <section class="card">
+
+            <div class="card-header">
+
+                <div class="icon green">
+                    📝
+                </div>
+
+                <div>
+                    <h2>
+                        Summarize a Paragraph
+                    </h2>
+
+                    <p>
+                        Turn long content into simple key points.
+                    </p>
+                </div>
+
+            </div>
+
+            <form
+                id="summaryForm"
+                class="form"
+            >
+
+                <textarea
+                    id="summaryText"
+                    rows="7"
+                    maxlength="20000"
+                    placeholder="Paste your paragraph or study material here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Summarize
+                </button>
+
+            </form>
+
+            <div
+                id="summaryResult"
+                class="output"
+            ></div>
+
+        </section>
+
+
+        <!-- Quiz -->
+        <section class="card">
+
+            <div class="card-header">
+
+                <div class="icon orange">
+                    🎯
+                </div>
+
+                <div>
+                    <h2>
+                        Generate a Quiz
+                    </h2>
+
+                    <p>
+                        Create three multiple-choice questions.
+                    </p>
+                </div>
+
+            </div>
+
+            <form
+                id="quizForm"
+                class="form"
+            >
+
+                <textarea
+                    id="quizText"
+                    rows="7"
+                    maxlength="20000"
+                    placeholder="Paste your study material here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Generate Quiz
+                </button>
+
+            </form>
+
+            <div
+                id="quizResult"
+                class="output"
+            ></div>
+
+            <button
+                id="showAnswersButton"
+                class="secondary-button hidden"
+                type="button"
+            >
+                Show Answers
+            </button>
+
+        </section>
+
+
+        <!-- Learning Recommendations -->
+        <section class="card">
+
+            <div class="card-header">
+
+                <div class="icon pink">
+                    🚀
+                </div>
+
+                <div>
+                    <h2>
+                        Get Learning Recommendations
+                    </h2>
+
+                    <p>
+                        Get a structured learning path for any topic.
+                    </p>
+                </div>
+
+            </div>
+
+            <form
+                id="learningForm"
+                class="form"
+            >
+
+                <input
+                    type="text"
+                    id="learningTopic"
+                    placeholder="Example: Linear Regression"
+                    maxlength="20000"
+                    required
+                >
+
+                <button type="submit">
+                    Get Recommendations
+                </button>
+
+            </form>
+
+            <div
+                id="learningResult"
+                class="output"
+            ></div>
+
+        </section>
+
+
+        <!-- Status -->
+        <div
+            id="status"
+            class="status"
+            aria-live="polite"
+        ></div>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                EduGenie • AI-powered learning support
+            </p>
+
+            <a
+                href="/docs"
+                target="_blank"
+            >
+                API Documentation
+            </a>
+
+        </footer>
+
+    </div>
+
+
+    <script
+        src="{{ url_for('static', path='app.js') }}"
+    ></script>
+
+</body>
+
+</html>
